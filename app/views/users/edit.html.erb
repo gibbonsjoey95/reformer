@@ -1,0 +1,22 @@
+<%= form_with model: @user, url: users_path, method: :patch do |f|%>
+
+  <% if @user.errors.any? %>
+    <div>
+      <h2><%= pluralize(@user.errors.count, "error") %></h2>
+
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :username%>
+  <%= f.text_field :username%>
+  <%= f.label :email%>
+  <%= f.email_field :email%>
+  <%= f.label :password%>
+  <%= f.password_field :password%>
+  <%= f.submit 'Edit User'%>
+<% end %>
