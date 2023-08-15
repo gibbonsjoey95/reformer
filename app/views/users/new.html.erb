@@ -36,8 +36,6 @@
   <%# </div> %>
 <%# <% end %> 
 
-<%= form_with model: @user, url: users_path do |f|%>
-
     <% if @user.errors.any? %>
     <div>
       <h2><%= pluralize(@user.errors.count, "error") %></h2>
@@ -50,6 +48,7 @@
     </div>
   <% end %>
 
+<%= form_with model: @user, url: users_path do |f|%>
   <%= f.label :username%>
   <%= f.text_field :username%>
   <%= f.label :email%>
